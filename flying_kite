@@ -1,0 +1,79 @@
+
+#include<windows.h>
+#include<GL/glut.h>
+#include<GL/gl.H>
+void init(void) {
+    glClearColor(0.2,0.1,1.0,0.0);
+    glMatrixMode(GL_PROJECTION);
+    gluOrtho2D(0.0,1000.0,0.0,1000.0);
+}
+
+void kite(void) {
+    int c=0,n=0;
+    while(n++<300) {
+    Sleep(10);
+    c+=1;
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(1.0,0.0,0.0);
+    glBegin(GL_POLYGON);
+        glVertex2f(225+c,700-c);
+        glVertex2f(300+c,820-c);
+        glVertex2f(375+c,700-c);
+        glVertex2f(300+c,560-c);
+    glEnd();
+
+    glColor3f(1.0,1.0,1.0);
+    glLineWidth(1);
+    glBegin(GL_LINES);
+        glVertex2f(225+c,700-c);
+        glVertex2f(300+c,820-c);
+        glVertex2f(300+c,820-c);
+        glVertex2f(375+c,700-c);
+        glVertex2f(375+c,700-c);
+        glVertex2f(300+c,560-c);
+        glVertex2f(300+c,560-c);
+        glVertex2f(225+c,700-c);
+
+        glVertex2f(250+c,700-c);
+        glVertex2f(300+c,720-c);
+        glVertex2f(350+c,700-c);
+        glVertex2f(300+c,720-c);
+        glVertex2f(300+c,780-c);
+        glVertex2f(300+c,720-c);
+
+        glVertex2f(300+c,720-c);
+        glVertex2f(50,0);
+    glEnd();
+
+  
+    glColor3f(1.0,1.0,1.0);
+    glLineWidth(3);
+    glBegin(GL_LINES);
+      
+        glVertex2f(300+c,560-c);
+        glVertex2f(300+c,530-c);
+        glVertex2f(300+c,560-c);
+        glVertex2f(285+c,530-c);
+        glVertex2f(300+c,560-c);
+        glVertex2f(315+c,530-c);
+    glEnd();
+   
+    glFlush();
+    }
+}
+
+
+
+int main(int argc,char** argv) {
+       int c=0;
+    glutInit(&argc,argv);
+    glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+    glutInitWindowSize(600,600);
+    glutInitWindowPosition(100,100);
+   
+    glutCreateWindow("Kite");
+    init();
+    glutDisplayFunc(kite);
+    glutMainLoop();
+    return 0;
+}
