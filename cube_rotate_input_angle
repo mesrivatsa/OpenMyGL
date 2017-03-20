@@ -1,4 +1,5 @@
-
+// enter angle in command window, hit enter
+// right, left and middle clivk for different axes of rotation
 #include <stdlib.h>
 #include<iostream>
 #ifdef __APPLE__
