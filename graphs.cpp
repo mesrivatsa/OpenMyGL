@@ -189,7 +189,7 @@ int main(int argc,char** argv)
 	glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
 	glutInitWindowPosition(100,100);
 	glutInitWindowSize(w,h);
-	glutCreateWindow("Exmp");
+	glutCreateWindow("Srivatsa's code");
 	init();
 	init_menu();
 	glutDisplayFunc(display);
