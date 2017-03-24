@@ -63,7 +63,7 @@ glutInitWindowPosition(100, 100);
 // Set display window width and height
 glutInitWindowSize(800, 600);
 // Create display window with the given title
-glutCreateWindow("Chess Board using OpenGL in C++");
+glutCreateWindow("Srivatsa's chess board.");
 // Execute initialization procedure
 init();
 // Send graphics to display window
